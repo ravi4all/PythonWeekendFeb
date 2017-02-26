@@ -10,12 +10,16 @@
 ##    else:
 ##        print("Prime")
 
-num = int(input("Enter the range : "))
+while True:
+    
+    min_range = int(input("Enter the lower range : "))
+    max_range = int(input("Enter the upper range : "))
 
-for x in range(2,num):
-    for i in range(2,x):
-        if x%i == 0:
-            print("Not prime",i)
-            break
-        else:
-            print("Prime")
+    for x in range(min_range,max_range+1):
+        if x > 1:
+            for i in range(2,x):
+                if x%i == 0:
+                    print("Not prime",x)
+                    break
+            else:
+                print("Prime",x)
