@@ -21,8 +21,21 @@ def readTask():
     for t in taskList:
         print(t)
 
+def updateTask():
+    taskName = input("Enter task name to update : ")
+    updatedTask = input("Enter Updated task : ")
+
+    if taskName in taskList:
+        indexOfTask = taskList.index(taskName)
+        taskList[indexOfTask] = updatedTask
+        print("Updated TaskList",taskList)
+
+def errHandler():
+    print("You have entered something wrong....Try Again")
+
 
 while True:
+    
     print("""
     1. Add Task
     2. Delete Task
@@ -35,12 +48,21 @@ while True:
     9. Exit
     """)
 
-    choice = int(input("Enter your choice : "))
+    toDo = {
+        "1":addTask,
+        "2":delTask,
+        "3":readTask,
+        "4":updateTask,
+        "9":quit
+        }
 
-    if choice == 1:
-        addTask()
-    elif choice == 2:
-        delTask()
-    elif choice == 9:
-        quit()
+    choice = input("Enter your choice : ")
+    toDo.get(choice,errHandler)()
+
+##    if choice == 1:
+##        addTask()
+##    elif choice == 2:
+##        delTask()
+##    elif choice == 9:
+##        quit()
 
