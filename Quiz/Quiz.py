@@ -12,11 +12,11 @@ def answer():
 
     if counter == 1 and user_ans == ans[0]:
         print("Correct")
-    if counter == 2 and user_ans == ans[1]:
+    elif counter == 2 and user_ans == ans[1]:
         print("Correct")
-    if counter == 3 and user_ans == ans[2]:
+    elif counter == 3 and user_ans == ans[2]:
         print("Correct")
-    if counter == 4 and user_ans == ans[3]:
+    elif counter == 4 and user_ans == ans[3]:
         print("Correct")
     else:
         print("Wrong")
